@@ -23,8 +23,8 @@ resource "aws_security_group" "alb_internal_sg" {
     from_port                           = 80
     to_port                             = 80
     protocol                            = "tcp"
-    #security_groups                     = [data.terraform_remote_state.app.outputs.web_sg_id]
-    cidr_blocks                         = ["0.0.0.0/0"]
+    security_groups                     = [data.terraform_remote_state.app.outputs.web_sg_id]
+    #cidr_blocks                         = ["0.0.0.0/0"]
   }
 
   egress {
